@@ -1,67 +1,47 @@
-/**
- * IROS Core Logic Engine v3.2.0
- * Handles real-time resource optimization simulations and UI interactivity.
- */
+<section class="container mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="bg-black border border-slate-800 rounded-xl overflow-hidden shadow-2xl font-mono text-sm">
+            <div class="bg-slate-900 px-4 py-2 border-b border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400">iros_core_v3.bin</span>
+                <div class="flex gap-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                </div>
+            </div>
+            <div id="logic-terminal" class="p-6 space-y-3 h-[400px] overflow-y-auto">
+                <p class="text-blue-400">[SYSTEM] Initializing Resource Scan...</p>
+                </div>
+        </div>
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("IROS Engine Initialized...");
-
-    // 1. Initialize Efficiency Counter Animation
-    animateEfficiencyStats();
-
-    // 2. Mock Data for Live Resource Stream
-    const resources = [
-        { name: "Sarah Jenkins", dept: "Technical/AV", load: 75, status: "Stable" },
-        { name: "Marcus V.", dept: "Hospitality", load: 92, status: "High Demand" },
-        { name: "Elena Rodriguez", dept: "Logistics", load: 40, status: "Optimal" },
-        { name: "David Chen", dept: "Security", load: 15, status: "Underutilized" }
-    ];
-
-    // 3. System Simulation: Auto-reallocation logic
-    if (document.getElementById('optimization-log')) {
-        simulateOptimization(resources);
-    }
-});
-
-/**
- * Animates the ROI and Efficiency numbers on the Analytics page
- */
-function animateEfficiencyStats() {
-    const statElements = document.querySelectorAll('.stat-value');
-    statElements.forEach(el => {
-        const target = parseInt(el.getAttribute('data-target'));
-        let count = 0;
-        const speed = target / 100;
-
-        const updateCount = () => {
-            if (count < target) {
-                count += speed;
-                el.innerText = Math.ceil(count) + (el.classList.contains('percent') ? '%' : '');
-                setTimeout(updateCount, 20);
-            } else {
-                el.innerText = target + (el.classList.contains('percent') ? '%' : '');
-            }
-        };
-        updateCount();
-    });
-}
-
-/**
- * Simulates the IROS Conflict Resolution Engine
- * Automatically suggests task swaps when a resource is overloaded (>90%)
- */
-function simulateOptimization(data) {
-    const log = document.getElementById('optimization-log');
-    
-    data.forEach(person => {
-        if (person.load > 90) {
-            const entry = document.createElement('div');
-            entry.className = "p-3 mb-2 bg-orange-500/10 border-l-4 border-orange-500 text-xs";
-            entry.innerHTML = `
-                <strong>[ALERT]</strong> Fatigue Warning: ${person.name} (${person.dept}) is at ${person.load}% capacity.<br>
-                <span class="text-blue-400">IROS Suggestion:</span> Re-allocate "Vendor Check-in" to Elena Rodriguez.
-            `;
-            log.prepend(entry);
-        }
-    });
-}
+        <div>
+            <h2 class="text-3xl font-bold mb-6">Conflict Resolution Logic</h2>
+            <p class="text-slate-400 mb-8">When a resource conflict is detected, IROS doesn't just flag it. It executes a 3-step heuristic scan to find the path of least resistance.</p>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4 p-4 rounded-xl bg-blue-600/5 border border-blue-500/20">
+                    <div class="text-blue-500 font-bold text-lg">01</div>
+                    <div>
+                        <h4 class="font-bold">Heuristic Mapping</h4>
+                        <p class="text-sm text-slate-400">Maps staff $Skill_{Vector}$ against $Task_{Complexity}$.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 rounded-xl bg-emerald-600/5 border border-emerald-500/20">
+                    <div class="text-emerald-500 font-bold text-lg">02</div>
+                    <div>
+                        <h4 class="font-bold">Fatigue Delta Check</h4>
+                        <p class="text-sm text-slate-400">Calculates $\Delta F$, the predicted exhaustion increase.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 rounded-xl bg-purple-600/5 border border-purple-500/20">
+                    <div class="text-purple-500 font-bold text-lg">03</div>
+                    <div>
+                        <h4 class="font-bold">Global Optimization</h4>
+                        <p class="text-sm text-slate-400">Selects the swap with the highest $ROI_{Project}$ score.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
