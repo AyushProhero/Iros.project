@@ -1,26 +1,76 @@
-<section class="container mx-auto px-6 py-20">
-    <h2 class="text-4xl font-bold text-center mb-16">Smart Resource Optimization</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition">
-            <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
-                <i class="fas fa-brain text-blue-400 text-xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">AI Task Delegation</h3>
-            <p class="text-slate-400 text-sm">Automatically assigns roles based on staff credentials and previous performance metrics.</p>
-        </div>
-        <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition">
-            <div class="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-6">
-                <i class="fas fa-chart-line text-emerald-400 text-xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Live Load Balancing</h3>
-            <p class="text-slate-400 text-sm">Detects burnout risk in real-time and suggests redistribution of tasks across teams.</p>
-        </div>
-        <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition">
-            <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6">
-                <i class="fas fa-boxes text-purple-400 text-xl"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Asset Integration</h3>
-            <p class="text-slate-400 text-sm">Tracks physical inventory and digital assets in one unified, intelligent stream.</p>
-        </div>
-    </div>
-</section>
+/* --- IROS Advanced Features Stylesheet --- */
+
+:root {
+    --primary-blue: #3b82f6;
+    --emerald-accent: #10b981;
+    --purple-accent: #8b5cf6;
+    --dark-bg: #020617;
+    --card-glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+/* 1. Smooth Entry Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+/* 2. Glassmorphic Card Design */
+.feature-card {
+    background: var(--card-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Staggered animation for cards */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* 3. Hover Effects & Glow */
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary-blue);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Animated accent line on hover */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--emerald-accent));
+    transition: width 0.4s ease;
+}
+
+.feature-card:hover::after {
+    width: 100%;
+}
+
+/* 4. Icon Styling */
+.feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
