@@ -45,3 +45,28 @@
         </div>
     </div>
 </section>
+/**
+ * IROS Crisis Mode Simulation
+ * Drops available manpower by 20% and triggers the Conflict Resolution Engine
+ */
+function triggerCrisisSimulation() {
+    console.warn("CRISIS MODE ACTIVE: Simulating 20% staff reduction...");
+    const terminal = document.getElementById('logic-terminal');
+    
+    const crisisSteps = [
+        { text: "!! WARNING: UNEXPECTED PERSONNEL SHORTAGE DETECTED !!", color: "text-rose-500 font-bold" },
+        { text: "> CALCULATING: Minimum viable operational paths...", color: "text-slate-400" },
+        { text: "> PRIORITY: Shifted to 'Mission Critical' tasks only.", color: "text-amber-400" },
+        { text: "> RE-ALLOCATING: 14 Non-essential tasks suspended.", color: "text-blue-400" },
+        { text: "> RESULT: Event stability maintained at 88% capacity.", color: "text-emerald-400 font-bold" }
+    ];
+
+    crisisSteps.forEach((step, index) => {
+        setTimeout(() => {
+            const p = document.createElement('p');
+            p.className = step.color + " italic mt-2 border-l-2 border-rose-500 pl-2";
+            p.innerText = step.text;
+            terminal.prepend(p);
+        }, index * 1000);
+    });
+}
