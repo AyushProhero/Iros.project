@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IROS | Connect & Deploy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/features.css">
+    <style>
+        .input-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .input-glass:focus {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: #3b82f6;
+            outline: none;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+        .contact-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+        }
+    </style>
+</head>
+<body class="contact-gradient text-slate-200 min-h-screen">
+
+    <nav class="p-6 flex justify-between items-center bg-slate-950/50 backdrop-blur-xl border-b border-slate-800 sticky top-0 z-50">
+        <div class="text-2xl font-black text-blue-500 tracking-tighter">IROS<span class="text-white">_CONNECT</span></div>
+        <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+            <a href="index.html" class="hover:text-blue-400">Back to Base</a>
+            <a href="dashboard.html" class="hover:text-blue-400">Platform</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-16 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="space-y-10">
+                <div>
+                    <h1 class="text-5xl font-black mb-6 leading-tight">Ready to <span class="text-blue-500">Optimize</span> your Workforce?</h1>
+                    <p class="text-slate-400 text-lg">Our engineering team is ready to help you integrate IROS into your existing ERP or Event Management stack.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-5 p-6 glass-card rounded-2xl">
+                        <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-xl">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Technical API Support</h4>
+                            <p class="text-sm text-slate-500">api-support@iros.io</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5 p-6 glass-card rounded-2xl">
+                        <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center text-emerald-400 text-xl">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Data Privacy & Security</h4>
+                            <p class="text-sm text-slate-500">compliance@iros.io</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 border-l-4 border-blue-500 bg-blue-500/5 rounded-r-2xl">
+                    <p class="italic text-slate-300">"Implementing IROS reduced our event setup man-hours by 42% in the first quarter."</p>
+                    <p class="mt-4 font-bold text-sm text-blue-400">— Lead Architect, Global Events Corp</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i class="fas fa-paper-plane text-8xl rotate-12"></i>
+                </div>
+                
+                <form id="contact-form" class="space-y-6 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full p-4 rounded-xl input-glass">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Company Email</label>
+                            <input type="email" placeholder="john@company.com" class="w-full p-4 rounded-xl input-glass">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Organization Type</label>
+                        <select class="w-full p-4 rounded-xl input-glass appearance-none text-slate-400">
+                            <option>Event Management Agency</option>
+                            <option>Corporate Internal Team</option>
+                            <option>Government/Public Sector</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Projected Personnel Size</label>
+                        <input type="range" min="10" max="1000" step="10" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500" id="staffRange">
+                        <div class="flex justify-between text-[10px] font-mono text-slate-500">
+                            <span>10 STAFF</span>
+                            <span class="text-blue-400" id="rangeValue">500 STAFF</span>
+                            <span>1000+ STAFF</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Deployment Notes</label>
+                        <textarea rows="4" placeholder="Briefly describe your resource challenges..." class="w-full p-4 rounded-xl input-glass"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-5 rounded-xl bg-blue-600 hover:bg-blue-500 transition font-black uppercase tracking-widest shadow-xl shadow-blue-500/20 group">
+                        Initialize Deployment Scan 
+                        <i class="fas fa-chevron-right ml-2 group-hover:translate-x-1 transition"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Dynamic Range Value Display
+        const range = document.getElementById('staffRange');
+        const display = document.getElementById('rangeValue');
+        range.addEventListener('input', () => {
+            display.innerText = `${range.value} STAFF`;
+        });
+
+        // Form Success Simulation
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = '<i class="fas fa-circle-notch animate-spin mr-2"></i> Processing Data...';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Request Received';
+                btn.className = "w-full py-5 rounded-xl bg-emerald-600 font-black uppercase tracking-widest transition";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
