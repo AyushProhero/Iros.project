@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>IROS | Command Center</title>
+</head>
+<body class="bg-[#0f172a] text-slate-200">
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-slate-900 border-r border-slate-800 p-6 hidden lg:block">
+            <div class="text-2xl font-bold text-blue-500 mb-10">IROS Core</div>
+            <nav class="space-y-4">
+                <a href="#" class="block p-3 bg-blue-600/10 text-blue-400 rounded-lg"><i class="fas fa-home mr-3"></i> Overview</a>
+                <a href="#" class="block p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-users mr-3"></i> Personnel</a>
+                <a href="#" class="block p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-calendar-check mr-3"></i> Events</a>
+                <a href="#" class="block p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-cog mr-3"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <header class="flex justify-between items-center mb-10">
+                <h1 class="text-3xl font-bold">Resource Live Stream</h1>
+                <div class="flex items-center gap-4">
+                    <span class="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-xs animate-pulse">● System Optimal</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" class="w-10 h-10 rounded-full">
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <p class="text-slate-400 text-sm">Optimization Rate</p>
+                    <h2 class="text-4xl font-bold text-blue-400 mt-2">94.2%</h2>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <p class="text-slate-400 text-sm">Active Manpower</p>
+                    <h2 class="text-4xl font-bold text-emerald-400 mt-2">128/150</h2>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <p class="text-slate-400 text-sm">Wastage Prevented</p>
+                    <h2 class="text-4xl font-bold text-purple-400 mt-2">420 Hrs</h2>
+                </div>
+            </div>
+
+            <div class="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden">
+                <div class="p-6 border-b border-slate-700 font-bold">Intelligent Task Re-allocation</div>
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900/50 text-slate-400 text-sm">
+                        <tr>
+                            <th class="p-4">Personnel</th>
+                            <th class="p-4">Current Task</th>
+                            <th class="p-4">IROS Suggestion</th>
+                            <th class="p-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700">
+                        <tr>
+                            <td class="p-4">John Doe (IT)</td>
+                            <td class="p-4 text-slate-400 text-sm">Moving Equipment</td>
+                            <td class="p-4"><span class="text-blue-400">Network Calibration</span></td>
+                            <td class="p-4">
